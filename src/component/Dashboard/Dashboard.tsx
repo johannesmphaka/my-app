@@ -1,17 +1,3 @@
-/*
-  This example requires some changes to your config:
- 
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
 import { Fragment, useState } from "react";
 import { Dialog, Menu, Transition } from "@headlessui/react";
 import {
@@ -31,14 +17,17 @@ import {
   MagnifyingGlassIcon,
 } from "@heroicons/react/20/solid";
 import { NavLink } from "react-router-dom";
+import Table1 from "./Table1";
+import LineChart from "./LineChart";
+import DashContent from "./DashContent";
 
 const navigation = [
   { name: "Page-1", icon: HomeIcon, current: true },
   { name: "Page-2", icon: UsersIcon, current: false },
-  //   { name: "Projects", icon: FolderIcon, current: false },
-  //   { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
-  //   { name: "Documents", href: "#", icon: DocumentDuplicateIcon, current: false },
-  //   { name: "Reports", href: "#", icon: ChartPieIcon, current: false },
+  { name: "Projects", icon: FolderIcon, current: false },
+  { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
+  { name: "Documents", href: "#", icon: DocumentDuplicateIcon, current: false },
+  { name: "Reports", href: "#", icon: ChartPieIcon, current: false },
 ];
 
 const teams = [
@@ -334,10 +323,6 @@ export default function Dashboard() {
               </button>
 
               {/* Separator */}
-              <div
-                className="h-6 w-px bg-gray-200 lg:hidden"
-                aria-hidden="true"
-              />
 
               <div className="flex flex-1 gap-x-4 self-stretch lg:gap-x-6">
                 <form className="relative flex flex-1" action="#" method="GET">
@@ -426,13 +411,25 @@ export default function Dashboard() {
             </div>
           </div>
 
-          <main className="py-10">
+          {/* <main className="py-10">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              {/* {selectedNavItem === "Dashboard" && <div>Dashboard content</div>}
+              {selectedNavItem === "Dashboard" && <div>Dashboard content</div>}
 
-              {selectedNavItem === "Team" && <div>Team content</div>} */}
+              {selectedNavItem === "Team" && <div>Team content</div>}
               main content
+              <div className="flex">
+                <div className="w-1/2 h-full">
+                  <Table1 />
+                </div>
+                <div className="96 h-full absolute right-0">
+                  <LineChart />
+                </div>
+              </div>
+              <Table1 />
             </div>
+          </main> */}
+          <main className="py-10">
+            <DashContent />
           </main>
         </div>
       </div>
