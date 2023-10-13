@@ -1,23 +1,34 @@
-import { Carousel } from "@material-tailwind/react";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Typography,
+  Button,
+} from "@material-tailwind/react";
 
 export function Page2() {
   return (
-    <Carousel className="rounded-xl">
-      <img
-        src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-        alt="image 1"
-        className="h-full w-full object-cover"
-      />
-      <img
-        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-        alt="image 2"
-        className="h-full w-full object-cover"
-      />
-      <img
-        src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
-        alt="image 3"
-        className="h-full w-full object-cover"
-      />
-    </Carousel>
+    <Card className="mt-6 w-96">
+      <CardHeader color="blue-gray" className="relative h-56">
+        <img
+          src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+          alt="card-image"
+        />
+      </CardHeader>
+      <CardBody>
+        <Typography variant="h5" color="blue-gray" className="mb-2">
+          UI/UX Review Check
+        </Typography>
+        <Typography>
+          The place is close to Barceloneta Beach and bus stop just 2 min by
+          walk and near to &quot;Naviglio&quot; where you can enjoy the main
+          night life in Barcelona.
+        </Typography>
+      </CardBody>
+      <CardFooter className="pt-0">
+        <Button>Read More</Button>
+      </CardFooter>
+    </Card>
   );
 }
